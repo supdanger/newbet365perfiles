@@ -3,19 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prueba de imagen</title>
+  <title>Perfiles</title>
   <style>
     body { font-family: Arial, sans-serif; padding: 2rem; }
-    .foto { max-width: 400px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-    .wrap { max-width: 720px; margin: 0 auto; text-align: center; }
+    .foto { max-width: 200px; width: 100%; height: auto; border-radius: 8px; margin: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+    .wrap { max-width: 900px; margin: 0 auto; text-align: center; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Comprobación de perfil_max.png</h1>
-    <p>La imagen se carga desde la URL raw de GitHub (commit específico):</p>
-    <img class="foto" alt="perfil" src="https://raw.githubusercontent.com/supdanger/newbet365perfiles/1596292dc678d035f0ab4b156c96216ef082cde0/perfil_max.png" />
-    <p>Si usas GitHub Pages, considera usar: <code>https://supdanger.github.io/newbet365perfiles/perfil_max.png</code></p>
+    <h1>Perfiles</h1>
+    <div id="perfiles"></div>
   </div>
+  <script>
+    // Añade aquí todas las URLs de tus imágenes de perfil:
+    const perfiles = [
+      "https://raw.githubusercontent.com/supdanger/newbet365perfiles/main/perfil_max.png",
+      // "https://raw.githubusercontent.com/supdanger/newbet365perfiles/main/perfil1.png",
+      // "https://raw.githubusercontent.com/supdanger/newbet365perfiles/main/perfil2.png"
+      // Agrega más rutas si subes más imágenes de perfil
+    ];
+
+    const contenedor = document.getElementById('perfiles');
+    perfiles.forEach((url) => {
+      const img = document.createElement('img');
+      img.src = url;
+      img.className = 'foto';
+      img.alt = 'perfil';
+      contenedor.appendChild(img);
+    });
+  </script>
 </body>
 </html>
